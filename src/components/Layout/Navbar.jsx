@@ -113,8 +113,8 @@ const Category = () => {
                     maxHeight: 500
                 }}
             >
-                {categoryList.map(items => (
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                {categoryList.map((items, i) => (
+                    <Box key={i} sx={{ display: 'flex', justifyContent: 'space-between' }}>
                         <MenuItem
                             key={items}
                             sx={{ fontSize: 14 }}
@@ -165,7 +165,7 @@ const IconManu = () => {
 const Navbar = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" sx={{ background: 'white' }}>
+            <AppBar position="fixed" sx={{ background: 'white' }}>
                 <Toolbar sx={{ display: 'flex', justifyContent: 'space-around' }}>
                     <Logo />
                     <Category />

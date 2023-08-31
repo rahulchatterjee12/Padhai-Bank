@@ -4,8 +4,9 @@ function App() {
   return (
     <div className="">
       <Layout>
-        <Home />
-
+        <div className="mt-24">
+          <Home />
+        </div>
       </Layout>
     </div>
   );
