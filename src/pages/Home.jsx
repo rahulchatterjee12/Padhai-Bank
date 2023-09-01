@@ -3,6 +3,7 @@ import Carousel from '../components/Home/Carousel';
 import Highlights from '../components/Home/Highlights';
 import TopFiveCourses from '../components/Home/TopFiveCourses';
 import LiveClasses from '../components/Home/LiveClasses';
+import CourseByCategory from '../components/Home/CourseByCategory';
 
 const Home = () => {
     return (
@@ -15,6 +16,8 @@ const Home = () => {
             <TopFiveCourses />
             {/* Sunday Training—Primeshala section 5 */}
             <LiveClasses />
+            {/* Upskilling Courses—Primeshala section 6 */}
+            <CourseByCategory />
         </div>
     )
 }

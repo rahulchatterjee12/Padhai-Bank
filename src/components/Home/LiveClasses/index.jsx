@@ -20,7 +20,7 @@ const Title = () => {
                 >
                     Sunday
                 </Typography>
-                <img src={'images/Home/live-classes/live.png'} className='object-scale-down' width={86} height={39} />
+                <img src={'images/Home/live-classes/live.png'} className='object-scale-down' alt='live' width={86} height={39} />
                 <Typography
                     sx={{
                         color: '#012478',
