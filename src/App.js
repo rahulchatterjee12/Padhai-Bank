@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="">
       <Layout>
-        <div className="mt-24">
+        <div className="mt-[4rem]">
           <Home />
         </div>
       </Layout>

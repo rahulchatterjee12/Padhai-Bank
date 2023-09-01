@@ -10,16 +10,6 @@ const images = [
     "src": 'images/Home/Carousel/img1.png',
     "alt": "Image 1 for carousel"
   },
-  {
-    "src": 'images/Home/Carousel/img2.png',
-    "alt": "Image 2 for carousel"
-  }, {
-    "src": 'images/Home/Carousel/img3.png',
-    "alt": "Image 3 for carousel"
-  }, {
-    "src": 'images/Home/Carousel/img4.png',
-    "alt": "Image 4 for carousel"
-  },
 ]
 
 
@@ -36,9 +26,18 @@ const Carousel = () => {
   };
 
   return (
-    <div className='flex justify-center mt-5'>
+    <div className='flex justify-center'>
       <div className="carousel">
-        <Button startIcon={<ArrowBackIosNewIcon />} onClick={prevSlide} />
+        <Button
+          sx={{
+            position: 'absolute',
+            top: 205,
+            height: 100,
+            left: 30
+          }}
+          startIcon={<ArrowBackIosNewIcon />}
+          onClick={prevSlide}
+        />
         {images.map((item, idx) => {
           return (
             <img
@@ -50,7 +49,16 @@ const Carousel = () => {
           );
         })}
 
-        <Button startIcon={< ArrowForwardIosIcon />} onClick={nextSlide} />
+        <Button
+          sx={{
+            position: 'absolute',
+            top: 205,
+            height: 100,
+            right: 30
+          }}
+          startIcon={< ArrowForwardIosIcon />}
+          onClick={nextSlide}
+        />
 
         <span className="indicators">
           {images.map((_, idx) => {
@@ -70,4 +78,4 @@ const Carousel = () => {
   )
 }
 
-export default Carousel
+export default Carousel;

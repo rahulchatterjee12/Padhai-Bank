@@ -73,8 +73,8 @@ const Logo = () => {
                 variant="h6" component="h2"
                 sx={{
                     color: '#0d6efd',
-                    fontWeight: 800,
-                    fontSize: 30
+                    fontWeight: { md: 800, sm: 600 },
+                    fontSize: { md: 30, sm: 10 }
                 }}>
                 PadhaiBank
             </Typography>
@@ -170,15 +170,18 @@ const Navbar = () => {
                     <Logo />
                     <Category />
                     <SearchBar />
-
-                    <Button
-                        sx={{ color: 'black' }}
-                        startIcon={<ShareIcon />}
-                    >
-                        Share
-                    </Button>
-                    <Button sx={{ background: '#0d6efd' }} variant='contained'>Join for Free</Button>
-                    <IconManu />
+                    <div className='hidden md:block'>
+                        <Button
+                            sx={{ color: 'black' }}
+                            startIcon={<ShareIcon />}
+                        >
+                            Share
+                        </Button>
+                    </div>
+                    <Button sx={{ background: '#0d6efd', fontSize: { md: '0.875rem', sm: '0.75' } }} variant='contained'>Enroll Now</Button>
+                    <div className='hidden md:block'>
+                        <IconManu />
+                    </div>
                 </Toolbar>
             </AppBar>
         </Box>
