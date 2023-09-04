@@ -38,23 +38,6 @@ const CategoryCart = () => {
                     >
                         Live Training
                     </Typography>
-                    {/* <Typography
-                        sx={{
-                            background: 'white',
-                            textAlign: 'center',
-                            fontSize: '12px',
-                            fontWeight: 600,
-                            border: '1px solid #a6d1ff',
-                            borderRadius: '20px',
-                            color: '#012478',
-                            marginBottom: 2,
-                            paddingX: '8px',
-                            marginTop: 'auto',
-                            justifyContent: 'start'
-                        }}
-                    >
-                        7 Courses
-                    </Typography> */}
                     <span
                         style={{
                             background: '#fff',

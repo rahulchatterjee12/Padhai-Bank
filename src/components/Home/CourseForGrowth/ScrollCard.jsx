@@ -1,4 +1,4 @@
-import { Box, Tab, Tabs } from '@mui/material'
+import { Box, Tabs } from '@mui/material'
 import React from 'react'
 
 const ScrollCard = () => {
