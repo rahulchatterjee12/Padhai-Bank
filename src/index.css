@@ -23,3 +23,8 @@
     border-radius: 1px;
     border: 1px solid var(--primary);
 }
+
+body,
+html {
+    font-family: 'Square Peg', cursive;
+}

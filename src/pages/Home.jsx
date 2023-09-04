@@ -4,20 +4,23 @@ import Highlights from '../components/Home/Highlights';
 import TopFiveCourses from '../components/Home/TopFiveCourses';
 import LiveClasses from '../components/Home/LiveClasses';
 import CourseByCategory from '../components/Home/CourseByCategory';
+import CourseForGrowth from '../components/Home/CourseForGrowth';
 
 const Home = () => {
     return (
         <div>
-            {/* Banner / Slider—Primeshala section 2 */}
+            {/* Section 2 */}
             <Carousel />
-            {/* Primeshala section 3 */}
+            {/* Section 3 */}
             <Highlights />
-            {/*Entrepreneurship Bundle—Primeshala section 4  */}
+            {/*Section 4  */}
             <TopFiveCourses />
-            {/* Sunday Training—Primeshala section 5 */}
+            {/* Section 5 */}
             <LiveClasses />
-            {/* Upskilling Courses—Primeshala section 6 */}
+            {/* Section 6 */}
             <CourseByCategory />
+            {/* Section 7 -  */}
+            <CourseForGrowth />
         </div>
     )
 }

@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import { Button } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import "./Carousel.css";
 
 const images = [
@@ -26,7 +26,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className='flex justify-center'>
+    <div className='flex justify-center bg-[#F9FDFF]'>
       <div className="carousel">
         <Button
           sx={{
@@ -40,12 +40,61 @@ const Carousel = () => {
         />
         {images.map((item, idx) => {
           return (
-            <img
-              src={item.src}
-              alt={item.alt}
+            <Box
               key={idx}
-              className={slide === idx ? "slide" : "slide slide-hidden"}
-            />
+              sx={{
+                width: '100%',
+                height: '460px',
+                background: 'url("images/Home/Carousel/back-img.png")',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+              }}
+            >
+              <Box>
+                <div className='flex justify-between'>
+                  <div className='my-auto ml-[130px]'>
+                    <Typography
+                      sx={{
+                        color: '#012478',
+                        fontSize: '52px',
+                        fontWeight: 600,
+                        lineHeight: '66px',
+                        width: '522px'
+                      }}
+                    >
+                      Learn Any Course for
+                      <span
+                        style={{
+                          color: '#FD5464',
+                          borderBottom: '12px solid yellow'
+                        }}
+                      >
+                        &nbsp;Free &nbsp;
+                      </span>
+                      in your own Language
+                    </Typography>
+                    <Button
+                      variant='contained'
+                      sx={{
+                        background: '#3785D7',
+                        borderRadius: '4px',
+                        padding: '0.54vw 4vw',
+                        boxShadow: '4px 4px 16px #A6D1FF',
+                        fontSize: '20px',
+                        marginTop: '23px'
+                      }}
+                    >
+                      Join For Free</Button>
+                  </div>
+                  <img style={{
+                    width: '522px',
+                    height: '460px',
+                  }}
+                    className='mx-[25px]'
+                    src="images/Home/Carousel/home-banner.png" alt="" />
+                </div>
+              </Box>
+            </Box>
           );
         })}
 
