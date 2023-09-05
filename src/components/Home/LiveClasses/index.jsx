@@ -57,11 +57,15 @@ const LiveClasses = () => {
                 <Box
                     sx={{
                         display: 'flex',
-                        justifyContent: 'center',
+                        flexWrap: 'wrap',
+                        width: 'auto',
+                        flexDirection: { xs: 'column', md: 'row' },
                         gap: 2,
-                        marginTop: 5,
-                        marginBottom: 7,
-                        overflow: 'scroll'
+                        marginTop: '36px',
+                        height: { xs: '300px', md: 'full' },
+                        overflow: 'scroll',
+                        marginX: '15px',
+                        justifyContent: { xs: 'start', md: 'center' }
                     }}
                 >
                     <TrainingCart />

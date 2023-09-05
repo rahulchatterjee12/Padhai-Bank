@@ -17,8 +17,12 @@ const CourseByCategory = () => {
                     display: 'flex',
                     flexWrap: 'wrap',
                     width: 'auto',
+                    flexDirection: { xs: 'column', md: 'row' },
                     gap: 2,
-                    marginTop: '36px'
+                    marginTop: '36px',
+                    height: { xs: '415px', md: 'auto' },
+                    overflow: 'scroll',
+                    marginX: { xs: '10px', md: 0 }
                 }}
             >
                 <CategoryCart />
