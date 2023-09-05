@@ -4,7 +4,7 @@ import Highlights from '../components/Home/Highlights';
 import TopFiveCourses from '../components/Home/TopFiveCourses';
 import LiveClasses from '../components/Home/LiveClasses';
 import CourseByCategory from '../components/Home/CourseByCategory';
-import CourseForGrowth from '../components/Home/CourseForGrowth';
+// import CourseForGrowth from '../components/Home/CourseForGrowth';
 
 const Home = () => {
     return (
