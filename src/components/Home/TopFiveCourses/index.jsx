@@ -29,20 +29,20 @@ const TopFiveCourses = () => {
         <div className='mt-5'>
             <Title />
             <div className='flex justify-around'>
-                <Box
-                    sx={{
-                        width: '200px',
-                        minHeight: '400px'
-                    }}
-                >
-                    <div className='sm:block hidden'>
+                <div className='sm:block hidden'>
+                    <Box
+                        sx={{
+                            width: '200px',
+                            minHeight: '400px'
+                        }}
+                    >
                         <CouresMenu />
-                    </div>
-                </Box>
+                    </Box>
+                </div>
                 <Box
                     sx={{
                         width: '1000px',
-                        maxHeight: '600px',
+                        maxHeight: { xs: 'full', md: '600px' },
                         overflow: 'scroll'
                     }}
                 >

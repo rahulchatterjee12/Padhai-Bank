@@ -22,7 +22,7 @@ const Home = () => {
             {/* Section 6 */}
             <CourseByCategory />
             {/* Section 7 -  */}
-            <CourseForGrowth />
+            {/* <CourseForGrowth /> */}
         </div>
     )
 }
