@@ -14,17 +14,21 @@ const Title = () => {
                 <Typography
                     sx={{
                         color: '#012478',
-                        fontSize: '48px',
+                        fontSize: { xs: '28px', md: '46px' },
                         fontWeight: 600
                     }}
                 >
                     Sunday
                 </Typography>
-                <img src={'images/Home/live-classes/live.png'} className='object-scale-down' alt='live' width={86} height={39} />
+                <img
+                    src={'images/Home/live-classes/live.png'}
+                    className='object-scale-down w-[30px] md:w-[85px]'
+                    alt='live'
+                />
                 <Typography
                     sx={{
                         color: '#012478',
-                        fontSize: '48px',
+                        fontSize: { xs: '28px', md: '46px' },
                         fontWeight: 600
                     }}
                 >
@@ -34,7 +38,7 @@ const Title = () => {
             <Typography
                 sx={{
                     color: '#012478',
-                    fontSize: '20px',
+                    fontSize: { xs: '14px', md: '20px' },
                     fontWeight: 600,
                     textAlign: 'center'
                 }}
@@ -56,7 +60,8 @@ const LiveClasses = () => {
                         justifyContent: 'center',
                         gap: 2,
                         marginTop: 5,
-                        marginBottom: 7
+                        marginBottom: 7,
+                        overflow: 'scroll'
                     }}
                 >
                     <TrainingCart />

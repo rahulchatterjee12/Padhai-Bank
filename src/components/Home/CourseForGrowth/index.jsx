@@ -6,7 +6,7 @@ import ScrollCard from './ScrollCard';
 const CourseForGrowth = () => {
     return (
         <div className='my-5'>
-            <div className='mx-28'>
+            <div className='sm:mx-2 md:mx-28'>
                 <SectionTitle
                     titelOne={'Courses For'}
                     titleTwo={'Career Growth'}

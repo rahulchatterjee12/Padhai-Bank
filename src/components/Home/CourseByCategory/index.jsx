@@ -6,7 +6,7 @@ import SectionTitle from '../../common/SectionTitle';
 
 const CourseByCategory = () => {
     return (
-        <div className='mx-[117px]'>
+        <div className='sm:mx-2 md:mx-[117px]'>
             <SectionTitle
                 titelOne={'Courses By'}
                 titleTwo={'Category'}

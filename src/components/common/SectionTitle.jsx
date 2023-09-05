@@ -9,13 +9,13 @@ const SectionTitle = ({ titelOne, titleTwo, subTitle = null }) => {
                 sx={{
                     display: 'flex',
                     gap: 1,
-                    justifyContent: 'start',
-                    marginBottom: '16px'
+                    justifyContent: { xs: 'center', md: 'start' },
+                    marginBottom: '16px',
                 }}>
                 <Typography
                     sx={{
                         color: '#012478',
-                        fontSize: '46px',
+                        fontSize: { sx: '28px', md: '46px' },
                         fontWeight: 600,
                     }}
                 >
@@ -24,7 +24,7 @@ const SectionTitle = ({ titelOne, titleTwo, subTitle = null }) => {
                 <Typography
                     sx={{
                         color: '#3785D7',
-                        fontSize: '46px',
+                        fontSize: { sx: '28px', md: '46px' },
                         fontWeight: 600
                     }}
                 >
@@ -32,7 +32,7 @@ const SectionTitle = ({ titelOne, titleTwo, subTitle = null }) => {
                 </Typography>
             </Box>
             {subTitle &&
-                <Box>
+                <div className='md:block hidden'>
                     <Typography
                         sx={{
                             color: '#012478',
@@ -42,7 +42,7 @@ const SectionTitle = ({ titelOne, titleTwo, subTitle = null }) => {
                         }}
                     >
                         {subTitle}</Typography>
-                </Box>
+                </div>
             }
         </>
     )

@@ -30,7 +30,7 @@ const items = [
 
 const Highlights = () => {
     return (
-        <div className='bg-[#012478] text-[#012478] flex justify-around'>
+        <div className='bg-[#012478] text-[#012478] mt-[40px] flex justify-around'>
             {items.map((item, i) => (
                 <div className='flex align-middle' key={i}>
                     <div className='text-center text-lg p-2 w-15 h-15 bg-white rounded-full justify-center my-5'>

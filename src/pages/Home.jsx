@@ -12,7 +12,9 @@ const Home = () => {
             {/* Section 2 */}
             <Carousel />
             {/* Section 3 */}
-            <Highlights />
+            <div className='hidden md:block'>
+                <Highlights />
+            </div>
             {/*Section 4  */}
             <TopFiveCourses />
             {/* Section 5 */}

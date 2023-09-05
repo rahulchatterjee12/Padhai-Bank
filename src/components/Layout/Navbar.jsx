@@ -8,13 +8,26 @@ import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
-import { Menu, MenuItem } from '@mui/material';
+import { Container, Drawer, InputAdornment, Menu, MenuItem, TextField } from '@mui/material';
 import AppsIcon from '@mui/icons-material/Apps';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import ShareIcon from '@mui/icons-material/Share';
 import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import MenuIcon from '@mui/icons-material/Menu';
+import ClearIcon from '@mui/icons-material/Clear';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import Slide from '@mui/material/Slide';
+import {
+    Divider,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText
+} from '@mui/material';
+import styled from 'styled-components';
 
 const categoryList = [
     ' Coureses in English ',
@@ -40,6 +53,7 @@ const manueList = [
     'Certiflate Veriflcation ',
     'Forums'
 ]
+
 const SearchBar = () => {
     return (
         <Paper
@@ -63,6 +77,52 @@ const SearchBar = () => {
                 inputProps={{ 'aria-label': 'search bar' }}
             />
         </Paper>
+    )
+}
+
+const SearchBarM = () => {
+    const [searchTerm, setSearchTerm] = useState("");
+    const [open, setOpen] = useState(false)
+    const handleChange = (event) => {
+        setSearchTerm(event.target.value);
+    };
+    return (
+        <>
+            <IconButton
+                onClick={() => setOpen(!open)}
+            >
+                <SearchIcon />
+            </IconButton>
+            {open &&
+                <Slide in={open} >
+                    <Container
+                        sx={{
+                            position: 'absolute',
+                            mt: 20,
+                            left: 0,
+                            width: '350px',
+                            marginX: '5px',
+                            background: 'white'
+                        }}>
+                        <TextField
+                            id="search"
+                            type="search"
+                            label="Search"
+                            value={searchTerm}
+                            onChange={handleChange}
+                            sx={{ width: 600 }}
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        <SearchIcon />
+                                    </InputAdornment>
+                                ),
+                            }}
+                        />
+                    </Container>
+                </Slide>
+            }
+        </>
     )
 }
 
@@ -129,6 +189,73 @@ const Category = () => {
     )
 }
 
+const DrawerHeader = styled('div')(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    margin: '0, 1px',
+    minHeight: 45,
+}));
+
+const SideDrawer = () => {
+    const [drawerOpen, setDrawerOpen] = useState(false);
+    return (
+        <div className='flex flex-grow-0'>
+            <div className='flex md:hidden items-center'>
+                <div>
+                    <IconButton
+                        onClick={() => setDrawerOpen(true)}
+                    >
+                        <MenuIcon fontSize='large' />
+                    </IconButton>
+                    <Drawer
+                        anchor='left'
+                        open={drawerOpen}
+                        onClose={() => setDrawerOpen(false)}
+                    >
+                        <DrawerHeader>
+                            <IconButton
+                                sx={{ color: 'grey.500', gap: 25 }}
+                                onClick={() => setDrawerOpen(false)}
+                            >
+                                <Logo />
+                                <ClearIcon sx={{ color: 'black', fontWeight: 600 }} />
+                            </IconButton>
+                        </DrawerHeader>
+                        <Divider />
+                        <List sx={{ width: 'full' }}>
+                            {categoryList.map((item, i) => (
+                                <ListItem key={item}
+                                    sx={{ borderBottom: '1px solid #c1c1c1' }}
+                                    disablePadding>
+                                    <ListItemButton
+                                        sx={{
+                                            paddingY: '2px',
+                                            paddingX: '15px'
+                                        }}
+                                        component='div'
+                                        onClick={() => setDrawerOpen(false)}
+                                    >
+                                        <ListItemText
+                                            sx={{
+                                                fontSize: '15px  !important',
+                                                lineHeight: '5px !important'
+                                            }}
+                                            primary={item} />
+                                        <ListItemIcon sx={{ minWidth: '15px' }}>
+                                            <ChevronRightIcon />
+                                        </ListItemIcon>
+                                    </ListItemButton>
+                                </ListItem>
+                            ))}
+                        </List>
+                    </Drawer>
+                </div>
+            </div>
+        </div>
+    )
+}
+
 const IconManu = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -150,8 +277,8 @@ const IconManu = () => {
                 open={open}
                 onClose={handleClose}
                 sx={{
-                    minWidth: 400,
-                    maxHeight: 500
+                    minWidth: { xs: 1, md: 400 },
+                    maxHeight: { xs: 1, md: 500 }
                 }}
             >
                 {manueList.map(item => (
@@ -166,10 +293,16 @@ const Navbar = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="fixed" sx={{ background: 'white' }}>
-                <Toolbar sx={{ display: 'flex', justifyContent: 'space-around' }}>
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <SideDrawer />
                     <Logo />
-                    <Category />
-                    <SearchBar />
+                    <div className='hidden md:block'>
+                        <Category />
+                    </div>
+                    <div className='hidden md:block'>
+                        <SearchBar />
+                    </div>
+                    <SearchBarM />
                     <div className='hidden md:block'>
                         <Button
                             sx={{ color: 'black' }}
@@ -178,7 +311,7 @@ const Navbar = () => {
                             Share
                         </Button>
                     </div>
-                    <Button sx={{ background: '#0d6efd', fontSize: { md: '0.875rem', sm: '0.75' } }} variant='contained'>Enroll Now</Button>
+                    <Button sx={{ background: '#0d6efd', fontSize: { md: '0.875rem', xs: '0.65' } }} variant='contained'>Enroll Now</Button>
                     <div className='hidden md:block'>
                         <IconManu />
                     </div>
